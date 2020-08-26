@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller Profile</title>
+    <h2>Welcome!</h2>
+</head>
+<body>
+
+Username:<p th:text="${username}"></p>
+Date of Birth:<p th:text="${dob}"></p>
+Address:<p th:text="${address}"></p>
+Phone:<p th:text="${phone}"></p>
+
+
+<button>Orders</button>
+<h2>Message</h2>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/FindMessageByReceiver">
+        <input type="hidden" name="id" id="id1" th:value="${id}">
+        <input type="submit" value="inbox"/>
+    </form>
+</div>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/FindMessageBySender">
+        <input type="hidden" name="id" id="id2" th:value="${id}">
+        <input type="submit" value="outbox"/>
+    </form>
+</div>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/SendMessage">
+        <input type="hidden" name="id" id="id3" th:value="${id}">
+        to<input type="text" name="username" id="name4"><br>
+        content<br>
+        <input type="text" rows="5" cols="30" name="content" id="content">
+        <input type="submit" value="send message"/>
+    </form>
+</div>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/ShowSellerProduct">
+        <input type="hidden" name="id" id="id5" th:value="${id}">
+        <input type="submit" value="my product"/>
+    </form>
+</div>
+
+<a href="/login">
+    <button>logout</button>
+</a>
+</body>
+</html>

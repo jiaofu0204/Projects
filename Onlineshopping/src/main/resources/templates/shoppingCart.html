@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+
+</head>
+<body>
+
+<h2>Your Shopping Cart: </h2>
+<div>
+    <table>
+        <tr><th>name</th></tr>
+        <tr th:each = "product:${product_name}">
+            <td th:text = "${product}"></td>
+        </tr>
+    </table>
+</div>
+
+<button>buy</button>
+<a href="#" onClick="javascript :history.back(-1);">back</a>
+
+</body>
+</html>

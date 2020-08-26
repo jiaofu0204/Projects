@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<form name="form" accept-charset="utf-8"  action="/doRegister">
+    <ul >
+        <li>
+            <label  class="input-tips2">username:</label>
+            <div class="inputOuter2">
+                <input type="text" id="username" name="username" maxlength="16" />
+            </div>
+        </li>
+        <li>
+            <label class="input-tips2">password:</label>
+            <div >
+                <input type="password" id="password"  name="password" maxlength="16"/>
+            </div>
+        </li>
+        <li>
+            <label class="input-tips2">address:</label>
+            <div >
+                <input type="address" id="address"  name="address" maxlength="16"/>
+            </div>
+        </li>
+        <li>
+            <label class="input-tips2">phone:</label>
+            <div >
+                <input type="phone" id="phone"  name="phone" maxlength="16"/>
+            </div>
+        </li>
+        <li>
+            <label class="input-tips2">dob:</label>
+            <div >
+                <input type="dob" id="dob"  name="dob" value="mm/dd/yyyy" maxlength="16"/>
+            </div>
+        </li>
+        <li>
+            <label class="input-tips2">type:</label>
+            <input type="radio" id="type1" name="type" value="customer">customer
+            <input type="radio" id="type2" name="type" value="seller">seller<br><br>
+        </li>
+        <li>
+            <div >
+                <input type="submit" value="register"/>
+            </div>
+        </li>
+    </ul>
+</form>
+</body>
+</html>

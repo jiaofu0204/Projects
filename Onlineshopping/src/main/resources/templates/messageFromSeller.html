@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+
+</head>
+<body>
+
+<div>
+    <table>
+        <tr><th>content</th><th>To</th></tr>
+        <tr th:each = "message:${messagebysender}">
+            <td th:text = "${message.content}"></td>
+            <td th:text = "${message.getReceiver().getUsername()}"></td>
+        </tr>
+    </table>
+</div>
+
+<a href="#" onClick="javascript :history.back(-1);">back</a>
+
+</body>
+</html>

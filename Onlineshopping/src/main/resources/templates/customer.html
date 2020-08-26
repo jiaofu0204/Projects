@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Profile</title>
+    <h1>Welcome!</h1>
+</head>
+<body>
+
+<font size="2" color="blue">Username:</font>
+<p th:text="${username}"></p>
+<font size="2" color="blue">Date of Birth:</font>
+<p th:text="${dob}"></p>
+<font size="2" color="blue">Address:</font>
+<p th:text="${address}"></p>
+<font size="2" color="blue">Phone:</font>
+<p th:text="${phone}"></p>
+
+<div>
+    <label class="input-tips2">Search for Product</label>
+    <form name="form" accept-charset="utf-8"  action="/findproduct">
+        <input type="hidden" id="username"  name="username" th:value="${username}"/>
+        <input type="text" id="name" name="name" maxlength="20" />
+        <input type="submit" value="find"/>
+    </form>
+</div>
+
+<button>Orders</button>
+<h2>Message</h2>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/FindMessageByReceiver">
+        <input type="hidden" name="id" id="id1" th:value="${id}">
+        <input type="submit" value="inbox"/>
+    </form>
+</div>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/FindMessageBySender">
+        <input type="hidden" name="id" id="id2" th:value="${id}">
+        <input type="submit" value="outbox"/>
+    </form>
+</div>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/SendMessage">
+        <input type="hidden" name="id" id="id3" th:value="${id}">
+        to<input type="text" name="username" id="name4"><br>
+        content<br>
+        <input type="text" rows="5" cols="30" name="content" id="content">
+        <input type="submit" value="send message"/>
+    </form>
+</div>
+<div>
+    <form name="form" accept-charset="utf-8"  action="/MyShoppingCart">
+        <input type="hidden" name="username" id="username1" th:value="${username}">
+        <input type="submit" value="Shopping Cart"/>
+    </form>
+</div>
+
+<a href="/login">
+    <button>logout</button>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <h1>Product information</h1>
+</head>
+<body>
+    <font size="2" color="blue">Product_name:</font>
+    <p th:text="${product_name}"></p>
+    <font size="2" color="blue">Description:</font>
+    <p th:text="${description}"></p>
+    <font size="2" color="blue">Price:</font>
+    <p th:text="${price}"></p>
+    <font size="2" color="blue">Availability:</font>
+    <p th:text="${availability}"></p>
+
+    <form name="form" accept-charset="utf-8"  action="/addtocart">
+        <input type="hidden" id="username"  name="username" th:value="${username}"/>
+        <input type="hidden" id="name"  name="name" th:value="${product_name}"/>
+        <input type="submit" value="add to cart"/>
+    </form>
+
+    <a href="#" onClick="javascript :history.back(-1);">back</a>
+</body>
+</html>
